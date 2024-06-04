@@ -1,0 +1,334 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 100px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.menu {
+    display: none;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+    color: #555;
+}
+nav ul li {
+    cursor: pointer;
+    padding: 40px 0;
+    position: relative;
+}
+nav ul li::before {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fe7e1b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+nav ul li:hover::before {
+    opacity: 1;
+}
+.cart-account {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.cart {
+    position: relative;
+}
+.cart img {
+    cursor: pointer;
+}
+.cart-menu {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px #0000007a;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 125%);
+    transition: 0.5s;
+    opacity: 0;
+}
+.bold {
+    font-weight: bold;
+    color: black;
+}
+.cart-menu h4 {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 0 20px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.cart-menu > p {
+    height: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-weight: bold;
+}
+.cart-account .account img {
+    width: 50px;
+}
+section {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+.product-images {
+    width: 30%;
+}
+.info {
+    width: 40%;
+}
+.product-images .image-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+}
+.product-images ul {
+    list-style: none;
+    display: flex;
+    gap: 5%;
+    padding: 0;
+    margin: 0;
+} 
+.product-images ul li.active {
+    position: relative;
+    border: 2px solid #fe7e1b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.product-images ul li.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff93;
+}
+.product-images ul li img {
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+.info h4 {
+    letter-spacing: 2px;
+    color: #555;
+    font-size: 14px;
+}
+.info h2 {
+    font-size: 50px;
+    margin: 30px 0;
+}
+.info p {
+    color: #555;
+    line-height: 1.6;
+}
+.info .price h3 {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.info .price h3 span:first-child {
+    font-size: 30px;
+    font-weight: bold;
+}
+.info .price h3 .discount {
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #1a1b20;
+    border-radius: 4px;
+}
+.info .price > span {
+    text-decoration: line-through;
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: block;
+    color: #555;
+}
+.info div:last-child {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+.info div:last-child .count {
+    background-color: #f6f6f6;
+    border-radius: 8px;
+    padding: 20px;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.info div:last-child .count span {
+    padding: 5px;
+}
+.info div:last-child .count i {
+    color: #fe7e1b;
+    cursor: pointer;
+}
+.info div:last-child .add-to-cart {
+    background-color: #fe7e1b;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 20px;
+    width: 60%;
+}
+.close-menu {
+    display: none;
+}
+.cart-item {
+    display: flex;
+    padding: 0 20px 20px 20px;
+    gap: 20px;
+    align-items: center;
+}
+.cart-item i {
+    color: #777;
+    cursor: pointer;
+}
+.cart-item img {
+    width: 70px;
+    border-radius: 4px;
+}
+.cart-item h5,
+.cart-item p {
+    margin: 0;
+    color: #777;
+}
+.cart-item h5 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+@media (max-width: 1500px) {
+    .product-images {
+        width: 40%;
+    }
+    .info {
+        width: 30%;
+    }
+    .info h2 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 991px) {
+    .cart-menu {
+        width: 350px;
+        left: -300%;
+    }
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        padding: 5px;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .menu {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        width: 100%;
+    }
+    header {
+        border: none;
+        position: fixed;
+        width: 100%;
+        box-shadow: 1px 1px 5px;
+        background-color: white;
+        z-index: 3;
+        padding: 20px;
+    }
+    nav ul {
+        position: fixed;
+        height: 100%;
+        width: 60%;
+        background-color: white;
+        z-index: 5;
+        box-shadow: 1px 1px 5px;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        font-weight: bold;
+        color: black;
+        gap: 0;
+        padding: 100px 50px;
+        transform: translateX(-100%);
+        transition: 0.5s;
+    }
+    nav ul li {
+        display: block;
+        width: 100%;
+        padding: 20px;
+    }
+    section {
+        padding: 130px 20px;
+        flex-direction: column;
+        gap: 100px;
+    }
+    .info {
+        padding: 0 20px;
+    }
+    .product-images {
+        width: 100%;
+    }
+    .info {
+        width: 100%;
+    }
+    .info > div:last-child {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info div:last-child .add-to-cart {
+        width: 100%;
+    }
+    .info div:last-child .count {
+        width: 100%;
+    }
+}
